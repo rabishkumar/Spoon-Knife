@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    container_name: spoon-knife-web
+    ports:
+      - "8080:80" # Map port 8080 on the host to port 80 on the container
+    volumes:
+      - ./Spoon-Knife:/usr/share/nginx/html:ro # Mount the Git repo content to Nginx's default web root
+    restart: always
